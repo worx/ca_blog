@@ -33,7 +33,6 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['group_rendered'] = 1;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -111,7 +110,7 @@ function ca_blog_views_default_views() {
     'trim_length' => '700',
   );
   $handler->display->display_options['fields']['body']['field_api_classes'] = 0;
-  /* Field: Node: Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -233,13 +232,21 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
   $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['title']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['title']['hide_empty'] = 0;
   $handler->display->display_options['fields']['title']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['title']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['title']['link_to_node'] = 1;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_ca_blog_b_image']['id'] = 'field_ca_blog_b_image';
@@ -302,7 +309,7 @@ function ca_blog_views_default_views() {
     'trim_length' => '700',
   );
   $handler->display->display_options['fields']['body']['field_api_classes'] = 0;
-  /* Field: Node: Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -410,13 +417,21 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
   $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['title']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['title']['hide_empty'] = 0;
   $handler->display->display_options['fields']['title']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['title']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['title']['link_to_node'] = 1;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_ca_blog_b_image']['id'] = 'field_ca_blog_b_image';
@@ -479,7 +494,7 @@ function ca_blog_views_default_views() {
     'trim_length' => '700',
   );
   $handler->display->display_options['fields']['body']['field_api_classes'] = 0;
-  /* Field: Node: Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -561,7 +576,6 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['group_rendered'] = 1;
   $handler->display->display_options['style_options']['columns'] = array(
     'views_bulk_operations' => 'views_bulk_operations',
     'title' => 'title',
@@ -729,7 +743,6 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
@@ -742,21 +755,65 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = 0;
   $handler->display->display_options['fields']['title']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['title']['hide_empty'] = 0;
   $handler->display->display_options['fields']['title']['empty_zero'] = 0;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  /* Field: Content: Published */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'node';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['status']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['status']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['status']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['status']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['status']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['status']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['status']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['status']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['status']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['status']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['status']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['status']['element_label_colon'] = 0;
+  $handler->display->display_options['fields']['status']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['status']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['status']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['status']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['edit_node']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['edit_node']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['edit_node']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['edit_node']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['edit_node']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['edit_node']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['edit_node']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['edit_node']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['edit_node']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['edit_node']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['edit_node']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['edit_node']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['edit_node']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit';
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  $handler->display->display_options['filters']['status']['group'] = 0;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  $handler->display->display_options['pane_title'] = 'CA News: Admin';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+  );
+  $handler->display->display_options['pane_title'] = 'CA Blog: Admin';
 
   /* Display: CA Blog: Node Template One */
   $handler = $view->new_display('panel_pane', 'CA Blog: Node Template One', 'panel_pane_3');
@@ -808,6 +865,7 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['field_ca_blog_b_image_1']['field'] = 'field_ca_blog_b_image';
   $handler->display->display_options['fields']['field_ca_blog_b_image_1']['label'] = '';
   $handler->display->display_options['fields']['field_ca_blog_b_image_1']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['alter']['text'] = '<div id="blog-images"><div class="main-image">[field_ca_blog_b_image]</div><div class="secondary-images">[field_ca_blog_b_image_1]</div></div>';
   $handler->display->display_options['fields']['field_ca_blog_b_image_1']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_ca_blog_b_image_1']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_ca_blog_b_image_1']['alter']['external'] = 0;
@@ -827,7 +885,7 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['field_ca_blog_b_image_1']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ca_blog_b_image_1']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_ca_blog_b_image_1']['settings'] = array(
-    'colorbox_node_style' => 'thumbnail',
+    'colorbox_node_style' => 'default_thumbnail',
     'colorbox_image_style' => '',
     'colorbox_gallery' => 'page',
     'colorbox_gallery_custom' => '',
@@ -837,6 +895,7 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['field_ca_blog_b_image_1']['delta_offset'] = '1';
   $handler->display->display_options['fields']['field_ca_blog_b_image_1']['delta_reversed'] = 0;
   $handler->display->display_options['fields']['field_ca_blog_b_image_1']['delta_first_last'] = 0;
+  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['separator'] = '';
   $handler->display->display_options['fields']['field_ca_blog_b_image_1']['field_api_classes'] = 0;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
