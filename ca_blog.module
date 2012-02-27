@@ -5,3 +5,48 @@
  */
 
 include_once('ca_blog.features.inc');
+
+/**
+ * Implements hook_menu().
+ */
+function ca_blog_menu() {
+  $items['admin/config/worx_features'] = array(
+    'title' => 'Worx Features',
+    'description' => 'Configure Worx Features',
+    'position' => 'right',
+    'weight' => -20,
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('access administration pages'),
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+  $items['admin/config/worx_features/blog'] = array(
+    'title' => 'Blog Configuration',
+    'description' => 'Override settings for ca_blog',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ca_blog_settings_form'),
+    'access arguments' => array('worx features admin'),
+    'file' => 'ca_blog.admin.inc',
+    'file path' => drupal_get_path('module', 'ca_blog'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['admin/config/worx_features/blog/general'] = array(
+    'title' => 'General Settings',
+    'description' => 'Override settings for ca_blog',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ca_blog_settings_form'),
+    'access arguments' => array('worx features admin'),
+    'file' => 'ca_blog.admin.inc',
+    'file path' => drupal_get_path('module', 'ca_blog'),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function ca_blog_menu_alter(&$items) {
+  $items['blog']['title'] = variable_get('ca_blog_menu_title', 'Blog');
+}
