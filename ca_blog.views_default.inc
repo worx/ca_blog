@@ -222,7 +222,7 @@ function ca_blog_views_default_views() {
   );
 
   /* Display: CA Blog: List Template One */
-  $handler = $view->new_display('panel_pane', 'CA Blog: List Template One', 'panel_pane_1');
+  $handler = $view->new_display('panel_pane', 'CA Blog: List Template One', 'ca_blog_list_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -403,7 +403,9 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['pane_title'] = 'CA Blog: List Template One';
 
   /* Display: CA Blog: Most Recent Blog Template One */
-  $handler = $view->new_display('block', 'CA Blog: Most Recent Blog Template One', 'block_1');
+  $handler = $view->new_display('block', 'CA Blog: Most Recent Blog Template One', 'ca_blog_block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Most Recent Blog';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -564,6 +566,28 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['empty_zero'] = 0;
   $handler->display->display_options['fields']['comment_count']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['comment_count']['format_plural'] = 0;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['nothing']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['nothing']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
   $handler->display->display_options['block_description'] = 'CA Blog: Most Recent Blog Template One';
 
   /* Display: CA Blog: Admin */

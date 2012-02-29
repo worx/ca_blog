@@ -442,7 +442,7 @@ function ca_blog_default_page_manager_pages() {
     $pane->pid = 'new-8';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'ca_blog-panel_pane_1';
+    $pane->subtype = 'ca_blog-ca_blog_list_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -453,11 +453,11 @@ function ca_blog_default_page_manager_pages() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
-    $pane->locks = '';
+    $pane->locks = array();
     $display->content['new-8'] = $pane;
     $display->panels['middle'][0] = 'new-8';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-8';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['ca_blog_list_view'] = $page;
