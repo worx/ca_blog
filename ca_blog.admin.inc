@@ -26,7 +26,7 @@ function ca_blog_settings_form() {
   );
   $form['ca_blog_panel_title'] = array(
     '#type' => 'textfield',
-    '#title' => t('Menu Title'),
+    '#title' => t('Panel Title'),
     '#default_value' => variable_get('ca_blog_panel_title', 'Blog'),
     '#required' => TRUE,
     '#description' => t('What would you like the panel title to be?'),
