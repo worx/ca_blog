@@ -66,20 +66,8 @@ function ca_blog_panels_pre_render($panel, $renderer) {
 function ca_blog_views_pre_view(&$view, &$display_id, &$args) {
   if ($display_id == 'ca_blog_list_1') {
     $view->set_items_per_page(variable_get('ca_blog_list_count', 5));
-    $global->user;
-    if (uid == 1) {
-      print_r($view);
-    }
   }
   elseif ($display_id == 'ca_blog_block_1') {
     $view->set_items_per_page(variable_get('ca_blog_block_count', 1));
-    if (true) {
-    }
-    $view->init_pager();
-    $view->use_pager();
-    $global->user;
-    if (uid == 1) {
-      print_r($view);
-    }
   }
 }
