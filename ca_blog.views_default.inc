@@ -942,9 +942,9 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['row_options']['links'] = 0;
   $handler->display->display_options['path'] = 'blog/rss-feed';
   $handler->display->display_options['displays'] = array(
-    'panel_pane_1' => 'panel_pane_1',
+    'ca_blog_list_1' => 'ca_blog_list_1',
     'default' => 0,
-    'block_1' => 0,
+    'ca_blog_block_1' => 0,
     'panel_pane_2' => 0,
     'panel_pane_3' => 0,
   );
