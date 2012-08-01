@@ -10,7 +10,7 @@
 function ca_blog_user_default_roles() {
   $roles = array();
 
-  // Exported role: blog admin
+  // Exported role: blog admin.
   $roles['blog admin'] = array(
     'name' => 'blog admin',
     'weight' => '4',
