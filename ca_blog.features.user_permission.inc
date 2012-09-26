@@ -14,8 +14,9 @@ function ca_blog_user_default_permissions() {
   $permissions['create blog content'] = array(
     'name' => 'create blog content',
     'roles' => array(
-      0 => 'blog admin',
-      1 => 'webmaster',
+      0 => 'administrator',
+      1 => 'blog admin',
+      2 => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -24,8 +25,9 @@ function ca_blog_user_default_permissions() {
   $permissions['delete any blog content'] = array(
     'name' => 'delete any blog content',
     'roles' => array(
-      0 => 'blog admin',
-      1 => 'webmaster',
+      0 => 'administrator',
+      1 => 'blog admin',
+      2 => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -34,8 +36,9 @@ function ca_blog_user_default_permissions() {
   $permissions['delete own blog content'] = array(
     'name' => 'delete own blog content',
     'roles' => array(
-      0 => 'blog admin',
-      1 => 'webmaster',
+      0 => 'administrator',
+      1 => 'blog admin',
+      2 => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -44,8 +47,9 @@ function ca_blog_user_default_permissions() {
   $permissions['edit any blog content'] = array(
     'name' => 'edit any blog content',
     'roles' => array(
-      0 => 'blog admin',
-      1 => 'webmaster',
+      0 => 'administrator',
+      1 => 'blog admin',
+      2 => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -54,8 +58,9 @@ function ca_blog_user_default_permissions() {
   $permissions['edit own blog content'] = array(
     'name' => 'edit own blog content',
     'roles' => array(
-      0 => 'blog admin',
-      1 => 'webmaster',
+      0 => 'administrator',
+      1 => 'blog admin',
+      2 => 'webmaster',
     ),
     'module' => 'node',
   );
