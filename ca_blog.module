@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the CA Blog feature.
@@ -45,8 +46,10 @@ function ca_blog_menu_alter(&$items) {
  * Implements hook_panels_pre_render().
  */
 function ca_blog_panels_pre_render($panel, $renderer) {
-  if (isset($panel->content['new-8']) && $panel->content['new-8']->subtype == 'ca_blog-ca_blog_list_1') {
-    $panel->title = variable_get('ca_blog_panel_title', 'Blog');
+  foreach ($panel->content as $key => $value) {
+    if ($value->subtype == 'ca_blog-ca_blog_list_1') {
+      $panel->title = variable_get('ca_blog_panel_title', 'Blog');
+    }
   }
 }
 
