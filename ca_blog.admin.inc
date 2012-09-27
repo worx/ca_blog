@@ -17,19 +17,19 @@
 function ca_blog_settings_form() {
   $form = array();
 
+  $form['ca_blog_panel_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Title'),
+    '#default_value' => variable_get('ca_blog_panel_title', 'Blog'),
+    '#required' => TRUE,
+    '#description' => t('What would you like the panel title to be?'),
+  );
   $form['ca_blog_menu_title'] = array(
     '#type' => 'textfield',
     '#title' => t('Menu Title'),
     '#default_value' => variable_get('ca_blog_menu_title', 'Blog'),
     '#required' => TRUE,
     '#description' => t('What would you like the menu title to be?'),
-  );
-  $form['ca_blog_panel_title'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Menu Title'),
-    '#default_value' => variable_get('ca_blog_panel_title', 'Blog'),
-    '#required' => TRUE,
-    '#description' => t('What would you like the panel title to be?'),
   );
   $form['ca_blog_list_count'] = array(
     '#type' => 'textfield',
