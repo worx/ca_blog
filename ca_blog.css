@@ -13,5 +13,8 @@
 
 .node-type-blog .pane-node-terms li {
     display: inline-block;
-      padding: 5px;
+    padding: 5px;
+}
+.view-ca-blog .view-display-id-ca_blog_node_1 {
+    float: left;
 }
