@@ -45,6 +45,17 @@ function ca_blog_settings_form() {
     '#required' => TRUE,
     '#description' => t('How many blogs would you like displayed in the block?'),
   );
+  $form['ca_blog_list_template'] = array(
+    '#type' => 'select',
+    '#title' => t('Blog\'s list template'),
+    '#options' => array(
+      'ca_blog_list_template_one' => t('Template one'),
+      'ca_blog_list_template_two' => t('Template two'),
+      'ca_blog_list_template_three' => t('Template three'),
+    ),
+    '#required' => TRUE,
+    '#default_value' => variable_get('ca_blog_list_template', 'ca_blog_list_template_one'),
+  );
   $form['actions'] = array(
     '#type' => 'actions',
   );
