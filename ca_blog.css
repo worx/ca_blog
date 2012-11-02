@@ -5,6 +5,19 @@
 .view-ca-blog .views-field-field-ca-blog-b-image {
     float: left;
     padding-right: 15px;
+    padding-bottom: 5px;
+}
+
+.view-ca-blog .views-field-field-ca-blog-b-image-1 {
+    float: left;
+    clear: left;
+    width: 200px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+}
+
+.view-ca-blog .views-field-field-ca-blog-b-image-1 img {
+    padding-right: 5px;
 }
 
 .view-ca-blog .views-field-nothing {
