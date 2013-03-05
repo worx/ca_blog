@@ -16,7 +16,8 @@ function ca_blog_user_default_permissions() {
     'roles' => array(
       0 => 'administrator',
       1 => 'blog admin',
-      2 => 'webmaster',
+      2 => 'blog writer',
+      3 => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -38,7 +39,8 @@ function ca_blog_user_default_permissions() {
     'roles' => array(
       0 => 'administrator',
       1 => 'blog admin',
-      2 => 'webmaster',
+      2 => 'blog writer',
+      3 => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -60,7 +62,8 @@ function ca_blog_user_default_permissions() {
     'roles' => array(
       0 => 'administrator',
       1 => 'blog admin',
-      2 => 'webmaster',
+      2 => 'blog writer',
+      3 => 'webmaster',
     ),
     'module' => 'node',
   );

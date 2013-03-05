@@ -17,5 +17,12 @@ function ca_blog_user_default_roles() {
     'machine_name' => 'blog_admin',
   );
 
+  // Exported role: blog writer.
+  $roles['blog writer'] = array(
+    'name' => 'blog writer',
+    'weight' => '6',
+    'machine_name' => 'blog_writer',
+  );
+
   return $roles;
 }
