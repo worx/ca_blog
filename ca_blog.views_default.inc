@@ -168,14 +168,6 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['path']['exclude'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
-  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['label'] = '';
-  $handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['alter']['text'] = '<a href="[path]#comments">[comment_count] Comments</a>';
-  $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['addtoany_link']['id'] = 'addtoany_link';
   $handler->display->display_options['fields']['addtoany_link']['table'] = 'node';
   $handler->display->display_options['fields']['addtoany_link']['field'] = 'addtoany_link';
@@ -271,6 +263,61 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['block_description'] = 'CA Blog: Most Recent Blog Template One';
+
+  /* Display: CA Blog: Node Template One */
+  $handler = $view->new_display('panel_pane', 'CA Blog: Node Template One', 'ca_blog_node_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['id'] = 'field_ca_blog_b_image';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['table'] = 'field_data_field_ca_blog_b_image';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['field'] = 'field_ca_blog_b_image';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['label'] = '';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['type'] = 'colorbox';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
+    'colorbox_node_style' => 'default',
+    'colorbox_image_style' => '',
+    'colorbox_gallery' => 'page',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'auto',
+  );
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_offset'] = '0';
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['id'] = 'field_ca_blog_b_image_1';
+  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['table'] = 'field_data_field_ca_blog_b_image';
+  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['field'] = 'field_ca_blog_b_image';
+  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['label'] = '';
+  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['alter']['text'] = '<div id="blog-images"><div class="main-image">[field_ca_blog_b_image]</div><div class="secondary-images">[field_ca_blog_b_image_1]</div></div>';
+  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['type'] = 'colorbox';
+  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['settings'] = array(
+    'colorbox_node_style' => 'default_thumbnail',
+    'colorbox_image_style' => '',
+    'colorbox_gallery' => 'page',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'auto',
+  );
+  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['delta_offset'] = '1';
+  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['separator'] = '';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['pane_title'] = 'CA Blog: Node Template One';
 
   /* Display: CA Blog: Admin */
   $handler = $view->new_display('panel_pane', 'CA Blog: Admin', 'ca_blog_admin');
@@ -449,60 +496,192 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['pane_title'] = 'CA Blog: Admin';
   $handler->display->display_options['inherit_panels_path'] = '1';
 
-  /* Display: CA Blog: Node Template One */
-  $handler = $view->new_display('panel_pane', 'CA Blog: Node Template One', 'ca_blog_node_1');
+  /* Display: CA Blog: Writer Admin */
+  $handler = $view->new_display('panel_pane', 'CA Blog: Writer Admin', 'ca_blog_writer_admin');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'title' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_ca_blog_b_image']['id'] = 'field_ca_blog_b_image';
-  $handler->display->display_options['fields']['field_ca_blog_b_image']['table'] = 'field_data_field_ca_blog_b_image';
-  $handler->display->display_options['fields']['field_ca_blog_b_image']['field'] = 'field_ca_blog_b_image';
-  $handler->display->display_options['fields']['field_ca_blog_b_image']['label'] = '';
-  $handler->display->display_options['fields']['field_ca_blog_b_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_ca_blog_b_image']['type'] = 'colorbox';
-  $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
-    'colorbox_node_style' => 'default',
-    'colorbox_image_style' => '',
-    'colorbox_gallery' => 'page',
-    'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'auto',
+  /* Field: Bulk operations: Content */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '25';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::node_assign_owner_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::system_message_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::node_make_sticky_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::node_make_unsticky_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::views_bulk_operations_argument_selector_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'url' => '',
+      ),
+    ),
+    'action::node_promote_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::node_publish_action' => array(
+      'selected' => 1,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::system_goto_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::node_unpromote_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::node_save_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::system_send_email_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::node_unpublish_action' => array(
+      'selected' => 1,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::node_unpublish_by_keyword_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
   );
-  $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_limit'] = '1';
-  $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_offset'] = '0';
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['id'] = 'field_ca_blog_b_image_1';
-  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['table'] = 'field_data_field_ca_blog_b_image';
-  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['field'] = 'field_ca_blog_b_image';
-  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['label'] = '';
-  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['alter']['text'] = '<div id="blog-images"><div class="main-image">[field_ca_blog_b_image]</div><div class="secondary-images">[field_ca_blog_b_image_1]</div></div>';
-  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['type'] = 'colorbox';
-  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['settings'] = array(
-    'colorbox_node_style' => 'default_thumbnail',
-    'colorbox_image_style' => '',
-    'colorbox_gallery' => 'page',
-    'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'auto',
-  );
-  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['delta_offset'] = '1';
-  $handler->display->display_options['fields']['field_ca_blog_b_image_1']['separator'] = '';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Published */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'node';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['pane_title'] = 'CA Blog: Node Template One';
+  /* Contextual filter: Content: Author uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'node';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'current_user';
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+  );
+  $handler->display->display_options['pane_title'] = 'CA Blog: Writer Admin';
+  $handler->display->display_options['inherit_panels_path'] = '1';
 
   /* Display: Feed */
   $handler = $view->new_display('feed', 'Feed', 'feed_1');
