@@ -14,7 +14,7 @@ function ca_blog_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_blog';
-  $strongarm->value = 'edit-workflow';
+  $strongarm->value = 'edit-xmlsitemap';
   $export['additional_settings__active_tab_blog'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -118,6 +118,16 @@ function ca_blog_strongarm() {
   $strongarm->name = 'pathauto_taxonomy_term_pattern';
   $strongarm->value = '[term:vocabulary]/[term:name]';
   $export['pathauto_taxonomy_term_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_blog';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.8',
+  );
+  $export['xmlsitemap_settings_node_blog'] = $strongarm;
 
   return $export;
 }
