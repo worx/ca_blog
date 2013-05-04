@@ -56,6 +56,17 @@ function ca_blog_settings_form() {
     '#required' => TRUE,
     '#default_value' => variable_get('ca_blog_list_template', 'ca_blog_list_template_one'),
   );
+  $form['ca_blog_taxonomy_template'] = array(
+    '#type' => 'select',
+    '#title' => t('Blog\'s taxonomy template'),
+    '#options' => array(
+      'ca_blog_taxonomy_template_one' => t('Template one'),
+      'ca_blog_taxonomy_template_two' => t('Template two'),
+      'ca_blog_taxonomy_template_three' => t('Template three'),
+    ),
+    '#required' => TRUE,
+    '#default_value' => variable_get('ca_blog_taxonomy_template', 'ca_blog_taxonomy_template_one'),
+  );
   $form['actions'] = array(
     '#type' => 'actions',
   );

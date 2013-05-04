@@ -2,13 +2,13 @@
     display: none;
 }
 
-.view-ca-blog-list .views-field-field-ca-blog-b-image {
+.view-ca-blog-list .views-field-field-ca-blog-b-image, .view-ca-blog-taxonomy .views-field-field-ca-blog-b-image {
     float: left;
     padding-right: 15px;
     padding-bottom: 5px;
 }
 
-.view-ca-blog-list .views-field-nothing {
+.view-ca-blog-list .views-field-nothing, .view-ca-blog-taxonomy .views-field-nothing {
     clear: both;
 }
 
