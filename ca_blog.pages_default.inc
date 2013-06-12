@@ -753,7 +753,7 @@ function ca_blog_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Blog';
+  $display->title = '';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
