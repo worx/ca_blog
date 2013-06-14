@@ -47,7 +47,7 @@ function ca_blog_menu_alter(&$items) {
  */
 function ca_blog_panels_pre_render($panel, $renderer) {
   foreach ($panel->content as $key => $value) {
-    if ($value->subtype == 'ca_blog-ca_blog_list_1') {
+    if ($value->subtype == 'ca_blog_list-ca_blog_list_1') {
       $panel->title = variable_get('ca_blog_panel_title', 'Blog');
     }
   }
