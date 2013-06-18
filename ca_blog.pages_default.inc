@@ -41,6 +41,8 @@ function ca_blog_default_page_manager_handlers() {
       ),
       'logic' => 'and',
     ),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'ca-blog-node ca-blog-node-template-1',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -259,7 +261,7 @@ function ca_blog_default_page_manager_handlers() {
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
+    'body_classes_to_add' => 'ca-blog-list-term ca-blog-list-term-template-1',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -469,6 +471,8 @@ function ca_blog_default_page_manager_pages() {
       ),
       'logic' => 'and',
     ),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'ca-admin ca-blog-admin',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -655,7 +659,7 @@ function ca_blog_default_page_manager_pages() {
       'logic' => 'and',
     ),
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
+    'body_classes_to_add' => 'ca-admin ca-blog-admin',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -742,6 +746,8 @@ function ca_blog_default_page_manager_pages() {
     'access' => array(
       'logic' => 'and',
     ),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'ca-blog-list ca-blog-list-template-1',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
