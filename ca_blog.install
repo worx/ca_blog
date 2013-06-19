@@ -26,4 +26,9 @@ function ca_blog_install() {
 	$imce_roles_profiles[246307762] = $imce_roles_profiles_vaule;
 	
   variable_set('imce_roles_profiles', $imce_roles_profiles);
+	
+  // Set the Pathauto for the node.
+  variable_set('pathauto_node_blog_pattern', 'blog/[node:title]');
+	
+  variable_set('pathauto_blog_pattern', 'blogs/[user:name]');	
 }
