@@ -513,6 +513,7 @@ function ca_blog_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Most Recent Blog';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['link_display'] = 'feed_1';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -593,9 +594,9 @@ function ca_blog_views_default_views() {
     'blog' => 'blog',
   );
 
-  /* Display: Recent Blog */
-  $handler = $view->new_display('block', 'Recent Blog', 'ca_blog_block_1');
-  $handler->display->display_options['block_description'] = 'Recent Blog';
+  /* Display: CA Blog: Blog Block Template One */
+  $handler = $view->new_display('block', 'CA Blog: Blog Block Template One', 'ca_blog_block_1');
+  $handler->display->display_options['block_description'] = 'CA Blog: Blog Block Template One';
   $export['ca_blog_block'] = $view;
 
   $view = new view();
