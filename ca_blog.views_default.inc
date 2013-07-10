@@ -809,7 +809,7 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -905,6 +905,8 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['field_ca_blog_b_image']['field'] = 'field_ca_blog_b_image';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['label'] = '';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
@@ -913,6 +915,7 @@ function ca_blog_views_default_views() {
     'colorbox_gallery' => 'page',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'auto',
+    'colorbox_caption_custom' => '',
   );
   $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_offset'] = '0';
@@ -938,6 +941,13 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '1';
   $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['fill_single_line'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_ca_blog_b_image']['id'] = 'field_ca_blog_b_image';
@@ -945,6 +955,8 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['field_ca_blog_b_image']['field'] = 'field_ca_blog_b_image';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['label'] = '';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(

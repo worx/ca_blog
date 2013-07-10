@@ -2,7 +2,7 @@
     display: none;
 }
 
-.view-ca-blog-list .views-field-field-ca-blog-b-image, .view-ca-blog-taxonomy .views-field-field-ca-blog-b-image {
+.view-ca-blog-list .views-field-field-ca-blog-b-image, .view-ca-blog-taxonomy .views-field-field-ca-blog-b-image, .view-id-ca_blog_block .views-field-field-ca-blog-b-image {
     float: left;
     padding-right: 15px;
     padding-bottom: 5px;
@@ -12,7 +12,14 @@
     clear: both;
 }
 
-.pane-ca-blog-node-ca-blog-node-1a, .pane-ca-blog-node-ca-blog-node-1b {
+.pane-ca-blog-node-ca-blog-node-1a {
+    float: left;
+    clear: left;
+    padding-right: 15px;
+    padding-bottom: 5px;
+}
+
+.pane-ca-blog-node-ca-blog-node-1b {
     float: left;
     clear: left;
     width: 200px;
