@@ -14,10 +14,13 @@
 
 .pane-ca-blog-node-ca-blog-node-1a {
     float: left;
-    clear: left;
+}
+
+.pane-ca-blog-node-ca-blog-node-1a .views-field-field-ca-blog-b-image {
     padding-right: 15px;
     padding-bottom: 5px;
 }
+
 
 .pane-ca-blog-node-ca-blog-node-1b {
     float: left;
