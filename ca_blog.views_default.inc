@@ -47,6 +47,8 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['field_ca_blog_b_image']['field'] = 'field_ca_blog_b_image';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['label'] = '';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
     'image_style' => 'default',
@@ -542,6 +544,8 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['field_ca_blog_b_image']['field'] = 'field_ca_blog_b_image';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['label'] = '';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
     'image_style' => 'default',
@@ -637,6 +641,8 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['field_ca_blog_b_image']['field'] = 'field_ca_blog_b_image';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['label'] = '';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
     'image_style' => 'default',
@@ -715,6 +721,8 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['field_ca_blog_b_image']['field'] = 'field_ca_blog_b_image';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['label'] = '';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
     'image_style' => 'default',
@@ -824,6 +832,8 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['field_ca_blog_b_image']['field'] = 'field_ca_blog_b_image';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['label'] = '';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
     'image_style' => 'default',
@@ -1023,6 +1033,8 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['field_ca_blog_b_image']['field'] = 'field_ca_blog_b_image';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['label'] = '';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
     'image_style' => 'default',
@@ -1110,6 +1122,8 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['field_ca_blog_b_image']['field'] = 'field_ca_blog_b_image';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['label'] = '';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
     'image_style' => 'default',
