@@ -516,6 +516,7 @@ function ca_blog_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Most Recent Blog';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['link_display'] = 'feed_1';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -1353,6 +1354,7 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['pane_title'] = 'CA Blog: Taxonomy Admin';
   $handler->display->display_options['pane_category']['name'] = 'CA Admin';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['inherit_panels_path'] = '1';
   $export['ca_blog_taxonomy_admin'] = $view;
 
   return $export;
