@@ -22,6 +22,7 @@ function ca_blog_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -807,6 +808,7 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'node_rss';
   $handler->display->display_options['row_options']['item_length'] = 'teaser';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['path'] = 'blog/rss-feed';
   $handler->display->display_options['displays'] = array(
     'ca_blog_list_1' => 'ca_blog_list_1',
@@ -1227,6 +1229,7 @@ function ca_blog_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
