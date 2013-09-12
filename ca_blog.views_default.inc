@@ -1209,7 +1209,7 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'node_rss';
   $handler->display->display_options['row_options']['item_length'] = 'teaser';
-  $handler->display->display_options['path'] = 'Categories/%/rss-feed';
+  $handler->display->display_options['path'] = 'blog/categories/%/rss-feed';
   $handler->display->display_options['displays'] = array(
     'ca_blog_taxonomy_1' => 'ca_blog_taxonomy_1',
     'default' => 0,

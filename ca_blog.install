@@ -30,5 +30,8 @@ function ca_blog_install() {
   // Set the Pathauto for the node.
   variable_set('pathauto_node_blog_pattern', 'blog/[node:title]');
 	
-  variable_set('pathauto_blog_pattern', 'blogs/[user:name]');	
+  variable_set('pathauto_blog_pattern', 'blogs/[user:name]');
+	
+  // Set the Pathauto for the terms.
+  variable_set('pathauto_taxonomy_term_ca_blog_categories_pattern', 'blog/[term:vocabulary]/[term:name]');
 }

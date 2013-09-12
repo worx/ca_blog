@@ -271,8 +271,8 @@ function ca_blog_default_page_manager_handlers() {
         0 => array(
           'name' => 'term_vocabulary',
           'settings' => array(
-            'vids' => array(
-              1 => '1',
+            'machine_name' => array(
+              'ca_blog_categories' => 'ca_blog_categories',
             ),
           ),
           'context' => 'argument_term_1',
