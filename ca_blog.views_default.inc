@@ -552,6 +552,7 @@ function ca_blog_views_default_views() {
     'image_style' => 'default',
     'image_link' => 'content',
   );
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_offset'] = '0';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
