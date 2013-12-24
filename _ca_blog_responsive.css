@@ -1,0 +1,84 @@
+.view-ca-blog-list .views-field-field-ca-blog-b-image,
+.view-ca-blog-taxonomy .views-field-field-ca-blog-b-image,
+.view-id-ca_blog_block .views-field-field-ca-blog-b-image {
+    float: none;
+    text-align: center;
+}
+
+.view-ca-blog-list .views-field-field-ca-blog-b-image img,
+.view-ca-blog-taxonomy .views-field-field-ca-blog-b-image img,
+.view-id-ca_blog_block .views-field-field-ca-blog-b-image img {
+    padding: 0 15px 5px 0;
+}
+
+.pane-ca-blog-node-ca-blog-node-1a {
+    float: none;
+    text-align: center;
+}
+
+.pane-ca-blog-node-ca-blog-node-1a .views-field-field-ca-blog-b-image {
+    padding: 0 0 5px;
+}
+
+
+.pane-ca-blog-node-ca-blog-node-1b {
+    float: none;
+    clear: left;
+    padding: 0 0 5px;
+    text-align: center;
+    width: auto;
+}
+
+.node-type-blog .pane-node-terms li {
+    display: inline-block;
+    padding: 5px;
+}
+
+.view-display-id-ca_blog_node_1 .views-field-view-node {
+    float: none;
+    text-align: center;
+}
+
+
+@media only screen and (min-width:481px) {
+    .view-ca-blog-list .views-field-field-ca-blog-b-image,
+    .view-ca-blog-taxonomy .views-field-field-ca-blog-b-image,
+    .view-id-ca_blog_block .views-field-field-ca-blog-b-image {
+        float: left;
+    }
+    
+    .view-ca-blog-list .views-field-field-ca-blog-b-image img,
+    .view-ca-blog-taxonomy .views-field-field-ca-blog-b-image img,
+    .view-id-ca_blog_block .views-field-field-ca-blog-b-image img {
+        padding: 0 15px 5px 0;
+    }
+    
+    .pane-ca-blog-node-ca-blog-node-1a {
+        float: left;
+    }
+    
+    .pane-ca-blog-node-ca-blog-node-1a .views-field-field-ca-blog-b-image {
+        padding: 0 15px 5px 0;
+    }
+    
+    .pane-ca-blog-node-ca-blog-node-1b {
+        float: left;
+        clear: left;
+        padding: 0 15px 5px 0;
+        text-align: center;
+        width: 200px;
+    }
+    
+    .view-ca-blog-node .views-field-field-ca-blog-b-image-1 img {
+        padding: 0 5px 5px 0;
+    }
+    
+    .node-type-blog .pane-node-terms li {
+        display: inline-block;
+        padding: 5px;
+    }
+    
+    .view-display-id-ca_blog_node_1 .views-field-view-node {
+        float: left;
+    }
+}
