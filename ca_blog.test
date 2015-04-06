@@ -9,7 +9,7 @@ class CABlogTestCase extends DrupalWebTestCase {
   protected $blog_admin;
   protected $blog_writer;
   protected $authenticated;
-  protected $profile = 'business-7.x-2.1';
+  protected $profile = 'worxco';
 
   public static function getInfo() {
     return array(
