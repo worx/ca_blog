@@ -28,9 +28,9 @@ class CABlogTestCase extends DrupalWebTestCase {
 
     parent::setUp($dependencies);
     // Create users.
-    $this->$blog_admin = $this->drupalCreateUser(array('create blog content', 'edit any blog content', 'delete any blog content', 'edit own blog content', 'delete own blog content'));
-    $this->$blog_writer = $this->drupalCreateUser(array('create blog content', 'edit own blog content', 'delete own blog content'));
-    $this->$authenticated = $this->drupalCreateUser(array());
+    $this->blog_admin = $this->drupalCreateUser(array('create blog content', 'edit any blog content', 'delete any blog content', 'edit own blog content', 'delete own blog content'));
+    $this->blog_writer = $this->drupalCreateUser(array('create blog content', 'edit own blog content', 'delete own blog content'));
+    $this->authenticated = $this->drupalCreateUser(array());
   }
 
   /**
@@ -40,13 +40,13 @@ class CABlogTestCase extends DrupalWebTestCase {
    */
   function testUnprivilegedUser() {
     // Create a blog node for a user with no blog permissions.
-    $this->drupalCreateNode(array('type' => 'blog', 'uid' => $this->$authenticated->uid));
+    $this->drupalCreateNode(array('type' => 'blog', 'uid' => $this->authenticated->uid));
 
-    $this->drupalLogin($this->$authenticated);
+    $this->drupalLogin($this->authenticated);
 
-    $this->drupalGet('blog/' . $this->$authenticated->uid);
+    $this->drupalGet('blog/' . $this->authenticated->uid);
     $this->assertResponse(200);
-    $this->assertTitle(t("@name's blog", array('@name' => format_username($this->$authenticated))) . ' | Drupal', 'Blog title was displayed');
+    $this->assertTitle(t("@name's blog", array('@name' => format_username($this->authenticated))) . ' | Drupal', 'Blog title was displayed');
     $this->assertText(t('You are not allowed to post a new blog entry.'), 'No new entries can be posted without the right permission');
   }
 }
