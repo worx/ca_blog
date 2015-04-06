@@ -72,3 +72,4 @@ features[views_view][] = ca_blog_node
 features[views_view][] = ca_blog_taxonomy
 features[views_view][] = ca_blog_taxonomy_admin
 features_exclude[field_base][body] = body
+files[] = ca_blog.test

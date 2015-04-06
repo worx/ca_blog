@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Tests for ca_blog.module.
+ */
+
+class CABlogTestCase extends DrupalWebTestCase {
+  protected $blog_admin;
+  protected $blog_writer;
+  protected $authenticated;
+
+  public static function getInfo() {
+    return array(
+      'name' => 'CA Blog functionality',
+      'description' => 'Create, view, edit, delete, and change blog entries and verify its consistency in the database.',
+      'group' => 'CA_Blog',
+    );
+  }
+
+  /**
+   * Enable modules and create users with specific permissions.
+   */
+  function setUp() {
+    parent::setUp('ca_blog');
+    // Create users.
+    $this->$blog_admin = $this->drupalCreateUser(array('create blog content', 'edit any blog content', 'delete any blog content', 'edit own blog content', 'delete own blog content'));
+    $this->$blog_writer = $this->drupalCreateUser(array('create blog content', 'edit own blog content', 'delete own blog content'));
+    $this->$authenticated = $this->drupalCreateUser(array());
+  }
+
+  /**
+   * Confirm that the "You are not allowed to post a new blog entry." message
+   * shows up if a user submitted blog entries, has been denied that
+   * permission, and goes to the blog page.
+   */
+  function testUnprivilegedUser() {
+    // Create a blog node for a user with no blog permissions.
+    $this->drupalCreateNode(array('type' => 'blog', 'uid' => $this->$authenticated->uid));
+
+    $this->drupalLogin($this->$authenticated);
+
+    $this->drupalGet('blog/' . $this->$authenticated->uid);
+    $this->assertResponse(200);
+    $this->assertTitle(t("@name's blog", array('@name' => format_username($this->$authenticated))) . ' | Drupal', 'Blog title was displayed');
+    $this->assertText(t('You are not allowed to post a new blog entry.'), 'No new entries can be posted without the right permission');
+  }
+}
