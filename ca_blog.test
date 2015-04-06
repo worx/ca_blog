@@ -22,8 +22,11 @@ class CABlogTestCase extends DrupalWebTestCase {
    * Enable modules and create users with specific permissions.
    */
   function setUp() {
-    parent::setUp('features');
-    parent::setUp('ca_blog');
+    $dependencies = array('block', 'blog', 'colorbox', 'context_admin', 'ctools', 'entity', 'features', 'field_ui', 'image', 'node', 'page_manager',
+    'panels', 'path', 'pathauto', 'pathauto', 'role_export', 'strongarm', 'taxonomy', 'text', 'token', 'views', 'views_bulk_operations',
+      'views_content', 'views_ui', 'xmlsitemap_node', 'ca_blog');
+
+    parent::setUp($dependencies);
     // Create users.
     $this->$blog_admin = $this->drupalCreateUser(array('create blog content', 'edit any blog content', 'delete any blog content', 'edit own blog content', 'delete own blog content'));
     $this->$blog_writer = $this->drupalCreateUser(array('create blog content', 'edit own blog content', 'delete own blog content'));
