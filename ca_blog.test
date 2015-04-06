@@ -22,6 +22,7 @@ class CABlogTestCase extends DrupalWebTestCase {
    * Enable modules and create users with specific permissions.
    */
   function setUp() {
+    parent::setUp('features');
     parent::setUp('ca_blog');
     // Create users.
     $this->$blog_admin = $this->drupalCreateUser(array('create blog content', 'edit any blog content', 'delete any blog content', 'edit own blog content', 'delete own blog content'));
