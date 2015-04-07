@@ -51,8 +51,8 @@ class CABlogTestCase extends DrupalWebTestCase {
    * Confirm that privileged users can do basic tasks (add, edit, delete own blog content)
    */
   function testPrivilegedUser() {
-    $this->doBasicTests($this->blog_admin, TRUE);
-    $this->doBasicTests($this->blog_admin, FALSE);
+    $this->doBasicTests($this->blog_admin);
+    $this->doBasicTests($this->blog_writer);
   }
 
   /**
@@ -60,10 +60,8 @@ class CABlogTestCase extends DrupalWebTestCase {
    *
    * @param object $user
    *   The logged in user.
-   * @param boolean $admin
-   *   User has 'access administration pages' privilege.
    */
-  private function doBasicTests($user, $admin) {
+  private function doBasicTests($user) {
     //log in user
     $this->drupalLogin($user);
 
