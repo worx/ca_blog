@@ -53,7 +53,7 @@ class CABlogTestCase extends DrupalWebTestCase {
    * Confirm that privileged users can do basic tasks (add, edit, delete own blog content)
    */
   function testPrivilegedUser() {
-    $this->doBasicTests($this->blog_admin);
+    //$this->doBasicTests($this->blog_admin);
     //$this->doBasicTests($this->blog_writer);
   }
 
