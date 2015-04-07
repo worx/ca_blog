@@ -44,8 +44,8 @@ class CABlogTestCase extends DrupalWebTestCase {
     $this->drupalLogin($this->authenticated);
 
     $this->drupalGet('blog/add_blog');
-    $this->assertResponse(200);
-    $this->assertTitle(t("Access denied"));
+    $this->assertResponse(403);
+    $this->assertTitle(t("Access denied"), 'access denied');
     $this->assertText(t('You are not authorized to access this page'), 'access denied');
   }
 }
