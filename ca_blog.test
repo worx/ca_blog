@@ -27,9 +27,12 @@ class CABlogTestCase extends DrupalWebTestCase {
 
     parent::setUp($dependencies);
     // Create users.
-    $this->blog_admin = $this->drupalCreateUser(array('create blog content', 'edit any blog content', 'delete any blog content', 'edit own blog content', 'delete own blog content'));
-    $this->blog_writer = $this->drupalCreateUser(array('create blog content', 'edit own blog content', 'delete own blog content'));
+    $this->blog_admin = $this->drupalCreateUser(array());
+    $this->blog_writer = $this->drupalCreateUser(array());
     $this->authenticated = $this->drupalCreateUser(array());
+
+    $this->blog_admin->roles[246778053] = 'blog_admin';
+    $this->blog_writer->roles[246307762] = 'blog_writer';
 
     $this->pass('<pre>' . print_r($this->blog_admin, TRUE) . '</pre>');
   }
