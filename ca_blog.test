@@ -30,6 +30,8 @@ class CABlogTestCase extends DrupalWebTestCase {
     $this->blog_admin = $this->drupalCreateUser(array('create blog content', 'edit any blog content', 'delete any blog content', 'edit own blog content', 'delete own blog content'));
     $this->blog_writer = $this->drupalCreateUser(array('create blog content', 'edit own blog content', 'delete own blog content'));
     $this->authenticated = $this->drupalCreateUser(array());
+
+    drupal_set_message('<pre>' . print_r($this->blog_admin, TRUE) . '</pre>');
   }
 
   /**
