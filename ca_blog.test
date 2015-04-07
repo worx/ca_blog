@@ -67,7 +67,7 @@ class CABlogTestCase extends DrupalWebTestCase {
     //log in user
     $this->drupalLogin($user);
 
-    //go to add blog page
+    /*//go to add blog page
     $this->drupalGet('blog/add_blog');
     $this->assertResponse(200);
 
@@ -88,6 +88,6 @@ class CABlogTestCase extends DrupalWebTestCase {
 
     //delete blog node
     $this->drupalPost('node/' . $node->nid . '/delete', $edit, t('Save'));
-    $this->assertText(t('Blog entry @name has been deleted.', array('@name' => $node->title)));
+    $this->assertText(t('Blog entry @name has been deleted.', array('@name' => $node->title)));*/
   }
 }
