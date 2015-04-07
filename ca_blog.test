@@ -54,7 +54,7 @@ class CABlogTestCase extends DrupalWebTestCase {
    */
   function testPrivilegedUser() {
     $this->drupalLogin($this->blog_writer);
-    $this->pass(var_export($this->blog_writer));
+    //$this->pass(var_export($this->blog_writer));
     $this->drupalGet('blog/add_blog');
     //$this->doBasicTests($this->blog_admin);
     //$this->doBasicTests($this->blog_writer);
