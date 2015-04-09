@@ -45,6 +45,15 @@ function ca_blog_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete terms in ca_blog_categories'.
+  $permissions['delete terms in ca_blog_categories'] = array(
+    'name' => 'delete terms in ca_blog_categories',
+    'roles' => array(
+      'blog admin' => 'blog admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit any blog content'.
   $permissions['edit any blog content'] = array(
     'name' => 'edit any blog content',
@@ -66,6 +75,15 @@ function ca_blog_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'edit terms in ca_blog_categories'.
+  $permissions['edit terms in ca_blog_categories'] = array(
+    'name' => 'edit terms in ca_blog_categories',
+    'roles' => array(
+      'blog admin' => 'blog admin',
+    ),
+    'module' => 'taxonomy',
   );
 
   return $permissions;
