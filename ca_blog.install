@@ -7,31 +7,38 @@
  */
 function ca_blog_install() {  
   // Update the imce roles profiles to set the Admin and writer role.
-	$imce_roles_profiles = variable_get('imce_roles_profiles');
-	
+  $imce_roles_profiles = variable_get('imce_roles_profiles');
+
   $imce_roles_profiles_vaule = array (
     'weight' => '-9',
     'public_pid' => 2,
     'private_pid' => 2,
-	);
-	
-	$imce_roles_profiles[246778053] = $imce_roles_profiles_vaule;
-	
+  );
+
+  $imce_roles_profiles[246778053] = $imce_roles_profiles_vaule;
+
   $imce_roles_profiles_vaule = array (
     'weight' => '-8',
     'public_pid' => 3,
     'private_pid' => 3,
-	);
-	
-	$imce_roles_profiles[246307762] = $imce_roles_profiles_vaule;
-	
+  );
+
+  $imce_roles_profiles[246307762] = $imce_roles_profiles_vaule;
+
   variable_set('imce_roles_profiles', $imce_roles_profiles);
-	
+
   // Set the Pathauto for the node.
   variable_set('pathauto_node_blog_pattern', 'blog/[node:title]');
-	
+
   variable_set('pathauto_blog_pattern', 'blogs/[user:name]');
-	
+
   // Set the Pathauto for the terms.
   variable_set('pathauto_taxonomy_term_ca_blog_categories_pattern', 'blog/[term:vocabulary]/[term:name]');
+
+  // Set the Administer Taxonomy for Blog Admin
+  user_role_change_permissions(246778053, 
+    array(
+      'administer taxonomy' => TRUE,
+    )
+  );
 }
