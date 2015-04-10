@@ -35,6 +35,7 @@ function ca_blog_install() {
   // Set the Pathauto for the terms.
   variable_set('pathauto_taxonomy_term_ca_blog_categories_pattern', 'blog/[term:vocabulary]/[term:name]');
 
+  // Set the Administer Taxonomy for Blog Admin
   user_role_change_permissions(246778053, 
     array(
       'administer taxonomy' => TRUE,
