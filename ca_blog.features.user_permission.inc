@@ -49,7 +49,9 @@ function ca_blog_user_default_permissions() {
   $permissions['delete terms in ca_blog_categories'] = array(
     'name' => 'delete terms in ca_blog_categories',
     'roles' => array(
+      'administrator' => 'administrator',
       'blog admin' => 'blog admin',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'taxonomy',
   );
@@ -81,7 +83,9 @@ function ca_blog_user_default_permissions() {
   $permissions['edit terms in ca_blog_categories'] = array(
     'name' => 'edit terms in ca_blog_categories',
     'roles' => array(
+      'administrator' => 'administrator',
       'blog admin' => 'blog admin',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'taxonomy',
   );
