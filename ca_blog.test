@@ -1,0 +1,96 @@
+<?php
+
+/**
+ * @file
+ * Tests for ca_blog.module.
+ */
+
+class CABlogTestCase extends DrupalWebTestCase {
+  protected $blog_admin;
+  protected $blog_writer;
+  protected $authenticated;
+  protected $profile = 'worxco';
+
+  public static function getInfo() {
+    return array(
+      'name' => 'CA Blog functionality',
+      'description' => 'Create, view, edit, delete, and change blog entries and verify its consistency in the database.',
+      'group' => 'CA_Blog',
+    );
+  }
+
+  /**
+   * Enable modules and create users with specific permissions.
+   */
+  function setUp() {
+    $dependencies = array('features', 'ca_blog');
+
+    parent::setUp($dependencies);
+    // Create users.
+    $this->blog_admin = $this->drupalCreateUser(array());
+    $this->blog_writer = $this->drupalCreateUser(array());
+    $this->authenticated = $this->drupalCreateUser(array());
+
+    $this->blog_admin->roles[246778053] = 'blog admin';
+    user_save($this->blog_admin);
+    $this->blog_writer->roles[246307762] = 'blog writer';
+    user_save($this->blog_writer);
+  }
+
+  /**
+   * Confirm that "Access denied" message shows up if an unprivileged user tries to add a blog
+   */
+  function testUnprivilegedUser() {
+    $this->drupalLogin($this->authenticated);
+
+    $this->drupalGet('blog/add_blog');
+    $this->assertResponse(403);
+    $this->assertTitle(t("Access denied | Drupal"), 'access denied');
+    $this->assertText(t('You are not authorized to access this page'), 'access denied');
+  }
+
+  /**
+   * Confirm that privileged users can do basic tasks (add, edit, delete own blog content)
+   */
+  function testPrivilegedUser() {
+    $this->drupalLogin($this->blog_writer);
+    //$this->pass(var_export($this->blog_writer));
+    $this->drupalGet('blog/add_blog');
+    //$this->doBasicTests($this->blog_admin);
+    //$this->doBasicTests($this->blog_writer);
+  }
+
+  /**
+   * Run basic tests on the indicated user.
+   *
+   * @param object $user
+   *   The logged in user.
+   */
+  private function doBasicTests($user) {
+    //log in user
+    $this->drupalLogin($user);
+
+    /*//go to add blog page
+    $this->drupalGet('blog/add_blog');
+    $this->assertResponse(200);
+
+    //create blog node
+    $edit = array();
+    $edit['title'] = $this->randomString(32);
+    $edit['body'] = $this->randomString(32);
+    $edit['field_ca_blog_b_categories[und]'] = $this->randomName(32);
+    $this->drupalPost('blog/add_blog', $edit, t('Save'));
+    $this->assertText(t('Blog entry @title has been created.', array('@title', $edit['title'])));
+
+    //edit blog node
+    $node = $this->drupalCreateNode(array('type' => 'blog', 'uid' => $user->uid));
+    $edit = array();
+    $edit['body'] = $this->randomString(32);
+    $this->drupalPost('node/' . $node->nid . '/edit', $edit, t('Save'));
+    $this->assertText(t('Blog entry @name has been updated.', array('@name' => $node->title)));
+
+    //delete blog node
+    $this->drupalPost('node/' . $node->nid . '/delete', $edit, t('Save'));
+    $this->assertText(t('Blog entry @name has been deleted.', array('@name' => $node->title)));*/
+  }
+}
