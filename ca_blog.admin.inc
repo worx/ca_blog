@@ -52,9 +52,10 @@ function ca_blog_settings_form() {
       'ca_blog_list_template_one' => t('Template one'),
       'ca_blog_list_template_two' => t('Template two'),
       'ca_blog_list_template_three' => t('Template three'),
+      'ca_blog_list_worx_aurora_one' => t('Worx Aurora template one'),
     ),
     '#required' => TRUE,
-    '#default_value' => variable_get('ca_blog_list_template', 'ca_blog_list_template_one'),
+    '#default_value' => variable_get('ca_blog_list_template', 'ca_blog_list_worx_aurora_one'),
   );
   $form['ca_blog_taxonomy_template'] = array(
     '#type' => 'select',
@@ -63,9 +64,10 @@ function ca_blog_settings_form() {
       'ca_blog_taxonomy_template_one' => t('Template one'),
       'ca_blog_taxonomy_template_two' => t('Template two'),
       'ca_blog_taxonomy_template_three' => t('Template three'),
+      'ca_blog_taxonomy_worx_aurora_one' => t('Worx Aurora template one'),
     ),
     '#required' => TRUE,
-    '#default_value' => variable_get('ca_blog_taxonomy_template', 'ca_blog_taxonomy_template_one'),
+    '#default_value' => variable_get('ca_blog_taxonomy_template', 'ca_blog_taxonomy_worx_aurora_one'),
   );
   $form['actions'] = array(
     '#type' => 'actions',

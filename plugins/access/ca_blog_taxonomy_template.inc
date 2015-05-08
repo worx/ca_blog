@@ -29,6 +29,7 @@ function ca_blog_taxonomy_template_access_settings($form, &$form_state, $conf) {
       'ca_blog_taxonomy_template_one' => t('Template one'),
       'ca_blog_taxonomy_template_two' => t('Template two'),
       'ca_blog_taxonomy_template_three' => t('Template three'),
+      'ca_blog_taxonomy_worx_aurora_one' => t('Worx Aurora template one'),
     ),
     '#required' => TRUE,
     '#default_value' => $conf['ca_blog_taxonomy_template'],
