@@ -14,10 +14,8 @@ function ca_blog_user_default_permissions() {
   $permissions['create blog content'] = array(
     'name' => 'create blog content',
     'roles' => array(
-      'administrator' => 'administrator',
       'blog admin' => 'blog admin',
       'blog writer' => 'blog writer',
-      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -26,30 +24,17 @@ function ca_blog_user_default_permissions() {
   $permissions['delete any blog content'] = array(
     'name' => 'delete any blog content',
     'roles' => array(
-      'administrator' => 'administrator',
       'blog admin' => 'blog admin',
-      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'delete terms in ca_blog_categories'.
-  $permissions['delete terms in ca_blog_categories'] = array(
-    'name' => 'delete terms in ca_blog_categories',
-    'roles' => array(
-      'blog admin' => 'blog admin',
-    ),
-    'module' => 'taxonomy',
   );
 
   // Exported permission: 'delete own blog content'.
   $permissions['delete own blog content'] = array(
     'name' => 'delete own blog content',
     'roles' => array(
-      'administrator' => 'administrator',
       'blog admin' => 'blog admin',
       'blog writer' => 'blog writer',
-      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -58,9 +43,7 @@ function ca_blog_user_default_permissions() {
   $permissions['delete terms in ca_blog_categories'] = array(
     'name' => 'delete terms in ca_blog_categories',
     'roles' => array(
-      'administrator' => 'administrator',
       'blog admin' => 'blog admin',
-      'webmaster' => 'webmaster',
     ),
     'module' => 'taxonomy',
   );
@@ -69,9 +52,7 @@ function ca_blog_user_default_permissions() {
   $permissions['edit any blog content'] = array(
     'name' => 'edit any blog content',
     'roles' => array(
-      'administrator' => 'administrator',
       'blog admin' => 'blog admin',
-      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -80,10 +61,8 @@ function ca_blog_user_default_permissions() {
   $permissions['edit own blog content'] = array(
     'name' => 'edit own blog content',
     'roles' => array(
-      'administrator' => 'administrator',
       'blog admin' => 'blog admin',
       'blog writer' => 'blog writer',
-      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -92,9 +71,7 @@ function ca_blog_user_default_permissions() {
   $permissions['edit terms in ca_blog_categories'] = array(
     'name' => 'edit terms in ca_blog_categories',
     'roles' => array(
-      'administrator' => 'administrator',
       'blog admin' => 'blog admin',
-      'webmaster' => 'webmaster',
     ),
     'module' => 'taxonomy',
   );
