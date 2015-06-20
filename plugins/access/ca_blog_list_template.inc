@@ -29,7 +29,6 @@ function ca_blog_list_template_access_settings($form, &$form_state, $conf) {
       'ca_blog_list_template_one' => t('Template one'),
       'ca_blog_list_template_two' => t('Template two'),
       'ca_blog_list_template_three' => t('Template three'),
-      'ca_blog_list_worx_aurora_one' => t('Worx Aurora template one'),
     ),
     '#required' => TRUE,
     '#default_value' => $conf['ca_blog_list_template'],
@@ -48,7 +47,7 @@ function ca_blog_list_template_access_settings_form($form, &$form_state) {
  * Check for access.
  */
 function ca_blog_list_template_access_check($conf, $context) {
-  return $conf['ca_blog_list_template'] == variable_get('ca_blog_list_template', 'ca_blog_list_worx_aurora_one');
+  return $conf['ca_blog_list_template'] == variable_get('ca_blog_list_template', 'ca_blog_list_template_one');
 }
 
 /**
@@ -65,9 +64,7 @@ function ca_blog_list_template_access_summary($conf, $context) {
     case 'ca_blog_list_template_three':
       $template = t('Template three');
       break;
-    case 'ca_blog_list_worx_aurora_one':
-      $template = t('Worx Aurora template one');
-      break;
+    
   }
 
   return t('Display template is set to: ' . $template);
