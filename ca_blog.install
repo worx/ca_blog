@@ -54,7 +54,7 @@ function ca_blog_install() {
  * Enable the taxonomy/term/%taxonomy_term page
  * Set the Administer Taxonomy for Blog Admin
  */
-function views_update_7000() {
+function ca_blog_update_7000() {
   // Get the worx_aurora_base_enable variable to default set if not already set.
   variable_get('worx_aurora_base_enable', 'worx_aurora_base_disabled');
 
