@@ -338,7 +338,7 @@ function ca_blog_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'CA Blog: Node Worx Aurora Template One',
+    'title' => 'Aurora Blog: Node Template One',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'css_id' => '',
@@ -592,7 +592,7 @@ function ca_blog_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'CA Blog: Taxonomy Worx Aurora Template One',
+    'title' => 'Aurora Blog: Taxonomy Template One',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -723,7 +723,7 @@ function ca_blog_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'CA Blog: Add Blog Worx Aurora Template one',
+    'title' => 'Aurora Blog: Add Blog Template one',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -1059,7 +1059,7 @@ function ca_blog_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'CA Blog: Admin Worx Aurora Template One',
+    'title' => 'Aurora Blog: Admin Template One',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'css_id' => '',
@@ -1139,7 +1139,7 @@ function ca_blog_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = -28;
   $handler->conf = array(
-    'title' => 'CA Blog: Writer Worx Aurora Template One',
+    'title' => 'Aurora Blog: Writer Template One',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -1423,7 +1423,7 @@ function ca_blog_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'CA Blog: List View Worx Aurora Template One',
+    'title' => 'Aurora Blog: List View Template One',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'css_id' => '',
