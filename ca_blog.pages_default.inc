@@ -264,7 +264,7 @@ function ca_blog_default_page_manager_handlers() {
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -29;
+  $handler->weight = -27;
   $handler->conf = array(
     'title' => 'CA Blog: Taxonomy List View Template One',
     'no_blocks' => 0,
@@ -285,6 +285,13 @@ function ca_blog_default_page_manager_handlers() {
             ),
           ),
           'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'ca_blog_taxonomy_template',
+          'settings' => array(
+            'ca_blog_taxonomy_template' => 'ca_blog_taxonomy_template_one',
+          ),
           'not' => FALSE,
         ),
       ),
@@ -586,11 +593,178 @@ function ca_blog_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'term_view__aurora-blog-taxonomy-category-template-two';
+  $handler->task = 'term_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -28;
+  $handler->conf = array(
+    'title' => 'Aurora Blog: Taxonomy Category Template Two',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'ca-blog-list-term ca-blog-list-term-template-1',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'term_vocabulary',
+          'settings' => array(
+            'machine_name' => array(
+              'ca_blog_categories' => 'ca_blog_categories',
+            ),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'ca_blog_taxonomy_template',
+          'settings' => array(
+            'ca_blog_taxonomy_template' => 'ca_blog_taxonomy_template_two',
+          ),
+          'not' => FALSE,
+        ),
+        2 => array(
+          'name' => 'worx_aurora_base_settings',
+          'settings' => array(
+            'worx_aurora_base_enable' => 'worx_aurora_base_enabled',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'name' => 'aurora-blog-taxonomy-category-template-two',
+  );
+  $display = new panels_display();
+  $display->layout = 'worx_aurora';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'f85beb80-3c2e-4be2-9161-53e0b363c474';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-330717ae-d5f3-4757-8a83-09f856dd50db';
+    $pane->panel = 'first-first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_blog_taxonomy-ca_blog_taxonomy_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '330717ae-d5f3-4757-8a83-09f856dd50db';
+    $display->content['new-330717ae-d5f3-4757-8a83-09f856dd50db'] = $pane;
+    $display->panels['first-first'][0] = 'new-330717ae-d5f3-4757-8a83-09f856dd50db';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-330717ae-d5f3-4757-8a83-09f856dd50db';
+  $handler->conf['display'] = $display;
+  $export['term_view__aurora-blog-taxonomy-category-template-two'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'term_view__ca-blog-taxonomy-category-template-two';
+  $handler->task = 'term_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -26;
+  $handler->conf = array(
+    'title' => 'CA Blog: Taxonomy Category Template Two',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'ca-blog-list-term ca-blog-list-term-template-1',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'term_vocabulary',
+          'settings' => array(
+            'machine_name' => array(
+              'ca_blog_categories' => 'ca_blog_categories',
+            ),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'ca_blog_taxonomy_template',
+          'settings' => array(
+            'ca_blog_taxonomy_template' => 'ca_blog_taxonomy_template_two',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'name' => 'ca-blog-taxonomy-category-template-two',
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'f85beb80-3c2e-4be2-9161-53e0b363c474';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-330717ae-d5f3-4757-8a83-09f856dd50db';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_blog_taxonomy-ca_blog_taxonomy_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '330717ae-d5f3-4757-8a83-09f856dd50db';
+    $display->content['new-330717ae-d5f3-4757-8a83-09f856dd50db'] = $pane;
+    $display->panels['middle'][0] = 'new-330717ae-d5f3-4757-8a83-09f856dd50db';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-330717ae-d5f3-4757-8a83-09f856dd50db';
+  $handler->conf['display'] = $display;
+  $export['term_view__ca-blog-taxonomy-category-template-two'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'term_view__panel_context_9164037a-12d4-4775-8213-b5956ea77b62';
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -29;
   $handler->conf = array(
     'title' => 'Aurora Blog: Taxonomy Template One',
     'no_blocks' => 0,
@@ -614,9 +788,16 @@ function ca_blog_default_page_manager_handlers() {
           'not' => FALSE,
         ),
         1 => array(
-          'name' => 'ca_blog_list_template',
+          'name' => 'ca_blog_taxonomy_template',
           'settings' => array(
-            'ca_blog_list_template' => 'ca_blog_list_worx_aurora_one',
+            'ca_blog_taxonomy_template' => 'ca_blog_taxonomy_template_one',
+          ),
+          'not' => FALSE,
+        ),
+        2 => array(
+          'name' => 'worx_aurora_base_settings',
+          'settings' => array(
+            'worx_aurora_base_enable' => 'worx_aurora_base_enabled',
           ),
           'not' => FALSE,
         ),
@@ -1421,7 +1602,7 @@ function ca_blog_default_page_manager_pages() {
   $handler->task = 'page';
   $handler->subtask = 'ca_blog_list_view';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -29;
   $handler->conf = array(
     'title' => 'Aurora Blog: List View Template One',
     'no_blocks' => 0,
@@ -1437,6 +1618,13 @@ function ca_blog_default_page_manager_pages() {
           'name' => 'worx_aurora_base_settings',
           'settings' => array(
             'worx_aurora_base_enable' => 'worx_aurora_base_enabled',
+          ),
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'ca_blog_list_template',
+          'settings' => array(
+            'ca_blog_list_template' => 'ca_blog_list_template_one',
           ),
           'not' => FALSE,
         ),
@@ -1489,7 +1677,7 @@ function ca_blog_default_page_manager_pages() {
   $handler->task = 'page';
   $handler->subtask = 'ca_blog_list_view';
   $handler->handler = 'panel_context';
-  $handler->weight = -29;
+  $handler->weight = -27;
   $handler->conf = array(
     'title' => 'CA Blog: List View Template One',
     'no_blocks' => 0,
@@ -1500,7 +1688,15 @@ function ca_blog_default_page_manager_pages() {
     'relationships' => array(),
     'access' => array(
       'logic' => 'and',
-      'plugins' => array(),
+      'plugins' => array(
+        0 => array(
+          'name' => 'ca_blog_list_template',
+          'settings' => array(
+            'ca_blog_list_template' => 'ca_blog_list_template_one',
+          ),
+          'not' => FALSE,
+        ),
+      ),
     ),
     'body_classes_to_remove' => '',
     'body_classes_to_add' => 'ca-blog-list ca-blog-list-template-1',
@@ -1538,6 +1734,357 @@ function ca_blog_default_page_manager_pages() {
     $pane->uuid = 'cc031ae6-b575-4ad6-a73e-83d4264ffc72';
     $display->content['new-cc031ae6-b575-4ad6-a73e-83d4264ffc72'] = $pane;
     $display->panels['middle'][0] = 'new-cc031ae6-b575-4ad6-a73e-83d4264ffc72';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_ca_blog_list_view__aurora-blog-list-view-category-side';
+  $handler->task = 'page';
+  $handler->subtask = 'ca_blog_list_view';
+  $handler->handler = 'panel_context';
+  $handler->weight = -28;
+  $handler->conf = array(
+    'title' => 'Aurora Blog: List View Category Side',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'worx_aurora_base_settings',
+          'settings' => array(
+            'worx_aurora_base_enable' => 'worx_aurora_base_enabled',
+          ),
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'ca_blog_list_template',
+          'settings' => array(
+            'ca_blog_list_template' => 'ca_blog_list_template_two',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+    ),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'ca-blog-list ca-blog-list-template-1',
+    'name' => 'aurora-blog-list-view-category-side',
+  );
+  $display = new panels_display();
+  $display->layout = 'worx_aurora';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+      'first-first' => NULL,
+      'first-second' => NULL,
+      'first-third' => NULL,
+      'first-fourth' => NULL,
+      'first-fifth' => NULL,
+      'first-sixth' => NULL,
+      'second-first' => NULL,
+      'second-second' => NULL,
+      'second-third' => NULL,
+      'second-fourth' => NULL,
+      'second-fifth' => NULL,
+      'second-sixth' => NULL,
+      'third-first' => NULL,
+      'third-second' => NULL,
+      'third-third' => NULL,
+      'third-fourth' => NULL,
+      'third-fifth' => NULL,
+      'third-sixth' => NULL,
+      'fourth-first' => NULL,
+      'fourth-second' => NULL,
+      'fourth-third' => NULL,
+      'fourth-fourth' => NULL,
+      'fourth-fifth' => NULL,
+      'fourth-sixth' => NULL,
+      'fifth-first' => NULL,
+      'fifth-second' => NULL,
+      'fifth-third' => NULL,
+      'fifth-fourth' => NULL,
+      'fifth-fifth' => NULL,
+      'fifth-sixth' => NULL,
+      'sixth-first' => NULL,
+      'sixth-second' => NULL,
+      'sixth-third' => NULL,
+      'sixth-fourth' => NULL,
+      'sixth-fifth' => NULL,
+      'sixth-sixth' => NULL,
+      'seventh-first' => NULL,
+      'seventh-second' => NULL,
+      'seventh-third' => NULL,
+      'seventh-fourth' => NULL,
+      'seventh-fifth' => NULL,
+      'seventh-sixth' => NULL,
+      'eighth-first' => NULL,
+      'eighth-second' => NULL,
+      'eighth-third' => NULL,
+      'eighth-fourth' => NULL,
+      'eighth-fifth' => NULL,
+      'eighth-sixth' => NULL,
+      'ninth-first' => NULL,
+      'ninth-second' => NULL,
+      'ninth-third' => NULL,
+      'ninth-fourth' => NULL,
+      'ninth-fifth' => NULL,
+      'ninth-sixth' => NULL,
+      'tenth-first' => NULL,
+      'tenth-second' => NULL,
+      'tenth-third' => NULL,
+      'tenth-fourth' => NULL,
+      'tenth-fifth' => NULL,
+      'tenth-sixth' => NULL,
+      'eleventh-first' => NULL,
+      'eleventh-second' => NULL,
+      'eleventh-third' => NULL,
+      'eleventh-fourth' => NULL,
+      'eleventh-fifth' => NULL,
+      'eleventh-sixth' => NULL,
+      'twelfth-first' => NULL,
+      'twelfth-second' => NULL,
+      'twelfth-third' => NULL,
+      'twelfth-fourth' => NULL,
+      'twelfth-fifth' => NULL,
+      'twelfth-sixth' => NULL,
+      'thirteenth-first' => NULL,
+      'thirteenth-second' => NULL,
+      'thirteenth-third' => NULL,
+      'thirteenth-fourth' => NULL,
+      'thirteenth-fifth' => NULL,
+      'thirteenth-sixth' => NULL,
+      'fourteenth-first' => NULL,
+      'fourteenth-second' => NULL,
+      'fourteenth-third' => NULL,
+      'fourteenth-fourth' => NULL,
+      'fourteenth-fifth' => NULL,
+      'fourteenth-sixth' => NULL,
+      'fifteenth-first' => NULL,
+      'fifteenth-second' => NULL,
+      'fifteenth-third' => NULL,
+      'fifteenth-fourth' => NULL,
+      'fifteenth-fifth' => NULL,
+      'fifteenth-sixth' => NULL,
+      'sixteenth-first' => NULL,
+      'sixteenth-second' => NULL,
+      'sixteenth-third' => NULL,
+      'sixteenth-fourth' => NULL,
+      'sixteenth-fifth' => NULL,
+      'sixteenth-sixth' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '6e6c95f1-bd3d-4441-85a3-e1c4b462b1e8';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-cc031ae6-b575-4ad6-a73e-83d4264ffc72';
+    $pane->panel = 'first-first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_blog_list-ca_blog_list_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'cc031ae6-b575-4ad6-a73e-83d4264ffc72';
+    $display->content['new-cc031ae6-b575-4ad6-a73e-83d4264ffc72'] = $pane;
+    $display->panels['first-first'][0] = 'new-cc031ae6-b575-4ad6-a73e-83d4264ffc72';
+    $pane = new stdClass();
+    $pane->pid = 'new-54d85daf-a57e-473f-8c7a-f1b712f2a225';
+    $pane->panel = 'first-second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'blog_category_menu-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '54d85daf-a57e-473f-8c7a-f1b712f2a225';
+    $display->content['new-54d85daf-a57e-473f-8c7a-f1b712f2a225'] = $pane;
+    $display->panels['first-second'][0] = 'new-54d85daf-a57e-473f-8c7a-f1b712f2a225';
+    $pane = new stdClass();
+    $pane->pid = 'new-8e557228-6772-4c73-a745-5761c7dae356';
+    $pane->panel = 'first-second';
+    $pane->type = 'views';
+    $pane->subtype = 'blog_archive';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 1,
+      'nodes_per_page' => '5',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'blog_archive_block',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '8e557228-6772-4c73-a745-5761c7dae356';
+    $display->content['new-8e557228-6772-4c73-a745-5761c7dae356'] = $pane;
+    $display->panels['first-second'][1] = 'new-8e557228-6772-4c73-a745-5761c7dae356';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_ca_blog_list_view__ca-blog-list-view-category-side';
+  $handler->task = 'page';
+  $handler->subtask = 'ca_blog_list_view';
+  $handler->handler = 'panel_context';
+  $handler->weight = -26;
+  $handler->conf = array(
+    'title' => 'CA Blog: List View Category Side',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'ca_blog_list_template',
+          'settings' => array(
+            'ca_blog_list_template' => 'ca_blog_list_template_two',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+    ),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'ca-blog-list ca-blog-list-template-1',
+    'name' => 'ca-blog-list-view-category-side',
+  );
+  $display = new panels_display();
+  $display->layout = 'twocol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+      'left' => NULL,
+      'right' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '6e6c95f1-bd3d-4441-85a3-e1c4b462b1e8';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-cc031ae6-b575-4ad6-a73e-83d4264ffc72';
+    $pane->panel = 'left';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ca_blog_list-ca_blog_list_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'cc031ae6-b575-4ad6-a73e-83d4264ffc72';
+    $display->content['new-cc031ae6-b575-4ad6-a73e-83d4264ffc72'] = $pane;
+    $display->panels['left'][0] = 'new-cc031ae6-b575-4ad6-a73e-83d4264ffc72';
+    $pane = new stdClass();
+    $pane->pid = 'new-10393797-fb18-4d0a-b8f7-ae24826766e8';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'blog_category_menu-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '10393797-fb18-4d0a-b8f7-ae24826766e8';
+    $display->content['new-10393797-fb18-4d0a-b8f7-ae24826766e8'] = $pane;
+    $display->panels['right'][0] = 'new-10393797-fb18-4d0a-b8f7-ae24826766e8';
+    $pane = new stdClass();
+    $pane->pid = 'new-338328f2-6d37-44dc-bd02-e6799ee93826';
+    $pane->panel = 'right';
+    $pane->type = 'views';
+    $pane->subtype = 'blog_archive';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 1,
+      'nodes_per_page' => '5',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'blog_archive_block',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '338328f2-6d37-44dc-bd02-e6799ee93826';
+    $display->content['new-338328f2-6d37-44dc-bd02-e6799ee93826'] = $pane;
+    $display->panels['right'][1] = 'new-338328f2-6d37-44dc-bd02-e6799ee93826';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
