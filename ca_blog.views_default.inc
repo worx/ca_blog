@@ -1018,6 +1018,14 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'medium';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_ca_blog_b_image']['id'] = 'field_ca_blog_b_image';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['table'] = 'field_data_field_ca_blog_b_image';
@@ -1421,6 +1429,14 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'medium';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_ca_blog_b_image']['id'] = 'field_ca_blog_b_image';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['table'] = 'field_data_field_ca_blog_b_image';
@@ -1479,6 +1495,7 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['pane_title'] = 'CA Blog: Taxonomy Template One';
   $handler->display->display_options['pane_category']['name'] = 'CA Taxonomy';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['inherit_panels_path'] = '1';
 
   /* Display: CA Blog: Taxonomy Feed */
   $handler = $view->new_display('feed', 'CA Blog: Taxonomy Feed', 'ca_blog_taxonomy_feed');
@@ -1598,6 +1615,281 @@ function ca_blog_views_default_views() {
   $export['ca_blog_taxonomy_admin'] = $view;
 
   $view = new view();
+  $view->name = 'ca_blog_taxonomy_grid_view';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'CA Blog Taxonomy: Grid View';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'blog-grid-row';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Has taxonomy term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+  );
+
+  /* Display: CA Blog Taxonomy: Grid View */
+  $handler = $view->new_display('panel_pane', 'CA Blog Taxonomy: Grid View', 'ca_blog_taxonomy_grid_view');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '1';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_class'] = 'grid-title';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['id'] = 'field_ca_blog_b_image';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['table'] = 'field_data_field_ca_blog_b_image';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['field'] = 'field_ca_blog_b_image';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['label'] = '';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['alter']['text'] = '<div class="blog-grid-container">[field_ca_blog_b_image][body]</div>';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['element_class'] = 'grid-image';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
+    'image_style' => 'grid_image_crop',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_offset'] = '0';
+  /* Field: Broken/missing handler */
+  $handler->display->display_options['fields']['addtoany_link']['id'] = 'addtoany_link';
+  $handler->display->display_options['fields']['addtoany_link']['table'] = 'node';
+  $handler->display->display_options['fields']['addtoany_link']['field'] = 'addtoany_link';
+  $handler->display->display_options['fields']['addtoany_link']['label'] = '';
+  $handler->display->display_options['fields']['addtoany_link']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['addtoany_link']['element_label_colon'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['text'] = '[body]
+[addtoany_link]';
+  $handler->display->display_options['fields']['body']['element_class'] = 'grid-body';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '300',
+  );
+  $handler->display->display_options['pane_title'] = 'CA Blog Taxonomy: Grid View';
+  $handler->display->display_options['pane_category']['name'] = 'CA Taxonomy';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['inherit_panels_path'] = '1';
+
+  /* Display: Feed */
+  $handler = $view->new_display('feed', 'Feed', 'feed_1');
+  $handler->display->display_options['enabled'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['row_options']['item_length'] = 'full';
+  $handler->display->display_options['path'] = 'blog/rss-feed';
+  $handler->display->display_options['displays'] = array(
+    'panel_pane_1' => 'panel_pane_1',
+    'default' => 0,
+  );
+  $export['ca_blog_taxonomy_grid_view'] = $view;
+
+  $view = new view();
+  $view->name = 'ca_blog_taxonomy_recent_blog';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'CA Blog Taxonomy: Recent Blog';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['id'] = 'field_ca_blog_b_image';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['table'] = 'field_data_field_ca_blog_b_image';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['field'] = 'field_ca_blog_b_image';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['label'] = '';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
+    'image_style' => 'default',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_offset'] = '0';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '600',
+  );
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Has taxonomy term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+  );
+
+  /* Display: CA Blog Taxonomy: Most Recent Blog View */
+  $handler = $view->new_display('panel_pane', 'CA Blog Taxonomy: Most Recent Blog View', 'ca_blog_taxonomy_recent_blog');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'medium';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['id'] = 'field_ca_blog_b_image';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['table'] = 'field_data_field_ca_blog_b_image';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['field'] = 'field_ca_blog_b_image';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['label'] = '';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
+    'image_style' => 'large',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_offset'] = '0';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '600',
+  );
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'Read More';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['pane_title'] = 'CA Blog Taxonomy: Most Recent Blog View';
+  $handler->display->display_options['pane_category']['name'] = 'CA Taxonomy';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $export['ca_blog_taxonomy_recent_blog'] = $view;
+
+  $view = new view();
   $view->name = 'ca_blog_view_recent_blog';
   $view->description = '';
   $view->tag = 'default';
@@ -1680,6 +1972,14 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'medium';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_ca_blog_b_image']['id'] = 'field_ca_blog_b_image';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['table'] = 'field_data_field_ca_blog_b_image';
@@ -1710,6 +2010,12 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['view_node']['label'] = '';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Read More';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['pane_title'] = 'CA Blog: Most Recent Blog View';
   $handler->display->display_options['pane_category']['name'] = 'CA List';
   $handler->display->display_options['pane_category']['weight'] = '0';
