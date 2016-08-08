@@ -77,6 +77,14 @@
   text-align: center;
 }
 
+.ca-blog-list-template-1 .panel-2col .panel-col-first {
+  width: 75%;
+}
+
+.ca-blog-list-template-1 .panel-2col .panel-col-last {
+  width: 25%;
+}
+
 @media only screen and (min-width: 641px) {
   .is-hidden {
     transform: translateY(100%);
