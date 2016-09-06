@@ -145,7 +145,7 @@ function ca_blog_field_default_field_instances() {
         'manualcrop_instant_crop' => 0,
         'manualcrop_instant_preview' => 1,
         'manualcrop_keyboard' => 1,
-        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_maximize_default_crop_area' => 1,
         'manualcrop_require_cropping' => array(),
         'manualcrop_styles_list' => array(
           'crop_default_landscape' => 'crop_default_landscape',
