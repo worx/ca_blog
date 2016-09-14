@@ -505,7 +505,7 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['field_ca_blog_b_image']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
-    'image_style' => 'default',
+    'image_style' => 'crop_default_landscape',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_limit'] = '1';
@@ -516,12 +516,11 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '600';
-  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_trimmed';
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '700',
+    'trim_length' => '600',
   );
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
@@ -715,7 +714,7 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['field_ca_blog_b_image']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
-    'image_style' => 'default',
+    'image_style' => 'crop_default_landscape',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_limit'] = '1';
@@ -726,12 +725,11 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '600';
-  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_trimmed';
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '700',
+    'trim_length' => '600',
   );
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
@@ -1036,7 +1034,7 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['field_ca_blog_b_image']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_ca_blog_b_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ca_blog_b_image']['settings'] = array(
-    'image_style' => 'default',
+    'image_style' => 'crop_default_landscape',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_ca_blog_b_image']['delta_limit'] = '1';
@@ -1047,10 +1045,9 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '600';
-  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_trimmed';
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '700',
   );
@@ -1461,9 +1458,9 @@ function ca_blog_views_default_views() {
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_trimmed';
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '700',
+    'trim_length' => '600',
   );
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
