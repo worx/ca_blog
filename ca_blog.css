@@ -84,6 +84,14 @@
 .ca-blog-list-template-1 .panel-2col .panel-col-last {
   width: 25%;
 }
+  
+.view-ca-blog-list .views-row,
+.view-ca-blog-view-recent-blog .views-row,
+.view-ca-blog-taxonomy .views-row,
+.view-ca-blog-taxonomy-recent-blog .views-row,
+.ca-blog-node .block-system-main {
+  position: relative;
+}
 
 @media only screen and (min-width: 641px) {
   .is-hidden {
@@ -115,14 +123,6 @@
     color: #fff;
     width: 100%;
     padding: 1%;
-  }
-  
-  .view-ca-blog-list .views-row,
-  .view-ca-blog-view-recent-blog .views-row,
-  .view-ca-blog-taxonomy .views-row,
-  .view-ca-blog-taxonomy-recent-blog .views-row,
-  .ca-blog-node .block-system-main {
-    position: relative;
   }
   
   .view-ca-blog-list .views-field-created,
