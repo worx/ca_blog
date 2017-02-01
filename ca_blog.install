@@ -40,6 +40,12 @@ function ca_blog_install() {
 
   // Enable the taxonomy/term/%taxonomy_term page without creating a conflict with other features that the page enabled as well.
   variable_set('page_manager_term_view_disabled', '0');
+  
+  $vocab = taxonomy_vocabulary_machine_name_load('ca_blog_categories');
+  $vocabvid = $vocab->vid;
+  
+  $editterm = 'edit terms in ' . $vocabvid;
+  $deleteterm = 'delete terms in ' . $vocabvid;
 
   // Set the permissions for Blog Admin
   user_role_change_permissions(246778053, 
@@ -48,10 +54,10 @@ function ca_blog_install() {
       'create blog content' => TRUE,
       'delete any blog content' => TRUE,
       'delete own blog content' => TRUE,
-      'delete terms in ca_blog_categories' => TRUE,
       'edit any blog content' => TRUE,
       'edit own blog content' => TRUE,
-      'edit terms in ca_blog_categories' => TRUE,
+      $editterm => TRUE,
+      $deleteterm => TRUE,
     )
   );
 
@@ -71,10 +77,10 @@ function ca_blog_install() {
       'create blog content' => TRUE,
       'delete any blog content' => TRUE,
       'delete own blog content' => TRUE,
-      'delete terms in ca_blog_categories' => TRUE,
       'edit any blog content' => TRUE,
       'edit own blog content' => TRUE,
-      'edit terms in ca_blog_categories' => TRUE,
+      $editterm => TRUE,
+      $deleteterm => TRUE,
     )
   );
 
@@ -85,10 +91,23 @@ function ca_blog_install() {
       'create blog content' => TRUE,
       'delete any blog content' => TRUE,
       'delete own blog content' => TRUE,
-      'delete terms in ca_blog_categories' => TRUE,
       'edit any blog content' => TRUE,
       'edit own blog content' => TRUE,
-      'edit terms in ca_blog_categories' => TRUE,
+      $editterm => TRUE,
+      $deleteterm => TRUE,
+    )
+  );
+  
+  $vocabid = taxonomy_vocabulary_machine_name_load('ca_blog_categories');
+  
+  $editterm = 'edit terms in ' + $vocabid->vid;
+  $deleteterm = 'delete terms in ' + $vocabid->vid;
+
+  // Set the permissions for Blog Admin
+  user_role_change_permissions(246778053, 
+    array(
+      $editterm => TRUE,
+      $deleteterm => TRUE,
     )
   );
 }
@@ -118,16 +137,22 @@ function ca_blog_update_7000() {
  * given these permissions without overridding the feature.
  */
 function ca_blog_update_7001() {
+  $vocab = taxonomy_vocabulary_machine_name_load('ca_blog_categories');
+  $vocabvid = $vocab->vid;
+  
+  $editterm = 'edit terms in ' . $vocabvid;
+  $deleteterm = 'delete terms in ' . $vocabvid;
+  
   // Set the permissions for Blog Admin
   user_role_change_permissions(246778053, 
     array(
       'create blog content' => TRUE,
       'delete any blog content' => TRUE,
       'delete own blog content' => TRUE,
-      'delete terms in ca_blog_categories' => TRUE,
       'edit any blog content' => TRUE,
       'edit own blog content' => TRUE,
-      'edit terms in ca_blog_categories' => TRUE,
+      $editterm => TRUE,
+      $deleteterm => TRUE,
     )
   );
 
@@ -147,10 +172,10 @@ function ca_blog_update_7001() {
       'create blog content' => TRUE,
       'delete any blog content' => TRUE,
       'delete own blog content' => TRUE,
-      'delete terms in ca_blog_categories' => TRUE,
       'edit any blog content' => TRUE,
       'edit own blog content' => TRUE,
-      'edit terms in ca_blog_categories' => TRUE,
+      $editterm => TRUE,
+      $deleteterm => TRUE,
     )
   );
 
@@ -161,10 +186,10 @@ function ca_blog_update_7001() {
       'create blog content' => TRUE,
       'delete any blog content' => TRUE,
       'delete own blog content' => TRUE,
-      'delete terms in ca_blog_categories' => TRUE,
       'edit any blog content' => TRUE,
       'edit own blog content' => TRUE,
-      'edit terms in ca_blog_categories' => TRUE,
+      $editterm => TRUE,
+      $deleteterm => TRUE,
     )
   );
 }
