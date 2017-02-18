@@ -45,20 +45,6 @@ function ca_blog_install() {
   user_role_change_permissions(246778053, 
     array(
       'administer taxonomy' => TRUE,
-      'create blog content' => TRUE,
-      'delete any blog content' => TRUE,
-      'delete own blog content' => TRUE,
-      'edit any blog content' => TRUE,
-      'edit own blog content' => TRUE,
-    )
-  );
-
-  // Set the permissions for Blog Writer
-  user_role_change_permissions(246307762, 
-    array(
-      'create blog content' => TRUE,
-      'delete own blog content' => TRUE,
-      'edit own blog content' => TRUE,
     )
   );
 
@@ -66,11 +52,6 @@ function ca_blog_install() {
   user_role_change_permissions(3, 
     array(
       'administer taxonomy' => TRUE,
-      'create blog content' => TRUE,
-      'delete any blog content' => TRUE,
-      'delete own blog content' => TRUE,
-      'edit any blog content' => TRUE,
-      'edit own blog content' => TRUE,
     )
   );
 
@@ -78,11 +59,6 @@ function ca_blog_install() {
   user_role_change_permissions(4, 
     array(
       'administer taxonomy' => TRUE,
-      'create blog content' => TRUE,
-      'delete any blog content' => TRUE,
-      'delete own blog content' => TRUE,
-      'edit any blog content' => TRUE,
-      'edit own blog content' => TRUE,
     )
   );
 }
@@ -108,39 +84,13 @@ function ca_blog_update_7000() {
 }
 
 /**
- * Set the permissions for Blog Admin, Blog Writer, Webmaster and Administrator as a one time event rather than handled with features to allow additonal roles to be 
- * given these permissions without overridding the feature.
+ * Set the Administer Taxonomy for Administrator and Webmaster.
  */
-function ca_blog_update_7001() {  
-  // Set the permissions for Blog Admin
-  user_role_change_permissions(246778053, 
-    array(
-      'create blog content' => TRUE,
-      'delete any blog content' => TRUE,
-      'delete own blog content' => TRUE,
-      'edit any blog content' => TRUE,
-      'edit own blog content' => TRUE,
-    )
-  );
-
-  // Set the permissions for Blog Writer
-  user_role_change_permissions(246307762, 
-    array(
-      'create blog content' => TRUE,
-      'delete own blog content' => TRUE,
-      'edit own blog content' => TRUE,
-    )
-  );
-
+function ca_blog_update_7001() {
   // Set the permissions for Administrator
   user_role_change_permissions(3, 
     array(
       'administer taxonomy' => TRUE,
-      'create blog content' => TRUE,
-      'delete any blog content' => TRUE,
-      'delete own blog content' => TRUE,
-      'edit any blog content' => TRUE,
-      'edit own blog content' => TRUE,
     )
   );
 
@@ -148,11 +98,6 @@ function ca_blog_update_7001() {
   user_role_change_permissions(4, 
     array(
       'administer taxonomy' => TRUE,
-      'create blog content' => TRUE,
-      'delete any blog content' => TRUE,
-      'delete own blog content' => TRUE,
-      'edit any blog content' => TRUE,
-      'edit own blog content' => TRUE,
     )
   );
 }
