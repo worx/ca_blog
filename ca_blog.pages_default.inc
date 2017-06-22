@@ -393,10 +393,10 @@ function ca_blog_default_page_manager_handlers() {
           'context' => 'argument_entity_id:node_1',
           'not' => FALSE,
         ),
-        1 => array(
-          'name' => 'ca_blog_list_template',
+        2 => array(
+          'name' => 'worx_aurora_base_settings',
           'settings' => array(
-            'ca_blog_list_template' => 'ca_blog_list_template_one',
+            'worx_aurora_base_enable' => 'worx_aurora_base_enabled',
           ),
           'not' => FALSE,
         ),
