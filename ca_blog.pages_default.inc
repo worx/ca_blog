@@ -396,7 +396,7 @@ function ca_blog_default_page_manager_handlers() {
         1 => array(
           'name' => 'ca_blog_list_template',
           'settings' => array(
-            'ca_blog_list_template' => 'ca_blog_list_worx_aurora_one',
+            'ca_blog_list_template' => 'ca_blog_list_template_one',
           ),
           'not' => FALSE,
         ),
