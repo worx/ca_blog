@@ -26,7 +26,6 @@ function ca_blog_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
     'customized' => 1,
-    'parent_identifier' => 'main-menu_blog:blog',
   );
 
   // Translatables
